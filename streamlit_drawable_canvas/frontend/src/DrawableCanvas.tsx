@@ -30,7 +30,7 @@ function getStreamlitBaseUrl(): string | null {
 /**
  * Arguments Streamlit receives from the Python side
  */
-export interface PythonArgs {
+export interface PythonArgs { //add rect args here too, related to init.py file
   fillColor: string
   strokeWidth: number
   strokeColor: string
