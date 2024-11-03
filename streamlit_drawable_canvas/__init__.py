@@ -66,9 +66,8 @@ def st_canvas(
     initial_drawing: dict = None,
     display_toolbar: bool = True,
     point_display_radius: int = 3,
-    rect_width: int = 20,  #added line
-    rect_height: int = 20, #added line
     key=None,
+    min_length: int = 6, #added line
 ) -> CanvasResult:
     """Create a drawing canvas in Streamlit app. Retrieve the RGBA image data into a 4D numpy array (r, g, b, alpha)
     on mouse up event.
@@ -150,6 +149,7 @@ def st_canvas(
         displayToolbar=display_toolbar,
         displayRadius=point_display_radius, #add lines rect_file: width/height
         key=key,
+        _minLength=min_length, #added line
         default=None,
     )
     if component_value is None:
