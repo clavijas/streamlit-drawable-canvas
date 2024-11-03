@@ -5,7 +5,7 @@ export interface ConfigureCanvasProps {
     strokeWidth: number
     strokeColor: string
     displayRadius: number
-    rect_width: number //added line
+    _minLength: number //added line
 }
 
 /**
