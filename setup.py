@@ -14,7 +14,7 @@ def readme() -> str:
 
 
 setuptools.setup(
-    name="streamlit-drawable-canvas",
+    name="streamlit-drawable-canvas-rect", #added line
     version="0.9.3",
     author="Fanilo ANDRIANASOLO",
     author_email="contact@andfanilo.com",
