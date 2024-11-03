@@ -30,7 +30,7 @@ function getStreamlitBaseUrl(): string | null {
 /**
  * Arguments Streamlit receives from the Python side
  */
-export interface PythonArgs { //add rect args here too, related to init.py file
+export interface PythonArgs { 
   fillColor: string
   strokeWidth: number
   strokeColor: string
@@ -43,6 +43,7 @@ export interface PythonArgs { //add rect args here too, related to init.py file
   initialDrawing: Object
   displayToolbar: boolean
   displayRadius: number
+  _minLength: number //added line
 }
 
 /**
@@ -62,6 +63,7 @@ const DrawableCanvas = ({ args }: ComponentProps) => {
     displayRadius,
     initialDrawing,
     displayToolbar,
+    _minLength, //added here
   }: PythonArgs = args
 
   /**
@@ -160,7 +162,8 @@ const DrawableCanvas = ({ args }: ComponentProps) => {
       fillColor: fillColor,
       strokeWidth: strokeWidth,
       strokeColor: strokeColor,
-      displayRadius: displayRadius
+      displayRadius: displayRadius,
+      _minLength : _minLength //added line
     })
 
     canvas.on("mouse:up", (e: any) => {
@@ -185,6 +188,7 @@ const DrawableCanvas = ({ args }: ComponentProps) => {
     strokeWidth,
     strokeColor,
     displayRadius,
+    _minLength, //aded line
     fillColor,
     drawingMode,
     initialDrawing,
